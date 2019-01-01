@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>happy-validate.js</title>
+	</head>
+	<body>
+		<form name="happy">
+			<input type="text" name="cd" id="" value="123456"/>
+			<input type="checkbox" name="c" checked="checked" />
+			
+			<input type="submit" value="数据提交" />
+		</form>
+		<script src="happy-validate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var rules = [
+				{
+					name: 'cd',
+					rules: [
+						{ rule: 'required', errMessage: '必填项'},
+						{ rule: 'minLength[10]', errMessage: '最小长度'},
+					]
+				}, {
+					name: 'c',
+					rules: [
+						{ rule: 'required', errMessage: '必填项'}
+					]
+				}
+			]
+// 			var hv = new happyValidate('happy', rules, function (errors) {
+// 				console.log('errosssssrs', errors)
+// 			});
+// 			var form = document.forms['happy'];
+// 			form.onsubmit = function (event) {
+// 				event.preventDefault();
+// 			}
+// 			console.log(form.c.checked);
+		</script>
+	</body>
+</html>
