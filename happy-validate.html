@@ -7,12 +7,13 @@
 	</head>
 	<body>
 		<form name="happy">
-			<input type="text" name="cd" id="" value="123456"/>
+			<input type="text" name="cd" id="" value=""/>
 			<input type="checkbox" name="c" checked="checked" />
+
 			
 			<input type="submit" value="数据提交" />
 		</form>
-		<script src="happy-validate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./src/happy-validate.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var rules = [
 				{
@@ -28,14 +29,15 @@
 					]
 				}
 			]
-// 			var hv = new happyValidate('happy', rules, function (errors) {
-// 				console.log('errosssssrs', errors)
-// 			});
-// 			var form = document.forms['happy'];
+			var hv = new happyValidate();
+			hv.init('happy', rules, function (errors) {
+				console.log('errosssssrs', errors)
+			});
+			// var form = document.forms['happy'];
 // 			form.onsubmit = function (event) {
 // 				event.preventDefault();
 // 			}
-// 			console.log(form.c.checked);
+			// console.log(form.c.length);
 		</script>
 	</body>
 </html>
